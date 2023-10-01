@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+
+    <div class="container mt-5">
+    {% include 'messages.html' %}
+    </div>
+   
+        
+    <div>
+        
+        <div class="container mt-5 pt-5">
+            <h2 class="text-center mt-lg-5">Select a category</h2>
+            <div class="row mt-lg-5">
+            {% for category in categories %}
+              <div class="col">
+                <a href="{{category.id}}" class="btn btn-primary">
+                {{category.category}}
+                </a>
+                <br>
+              </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</html>

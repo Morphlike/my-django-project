@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Results</title>
+</head>
+
+<body>
+<div class="container ">   
+    <div class="card-columns" style="padding: 10px; margin: 20px;">
+        <div class="card-body">
+            <h2 class="card-title">{{ request.user.username | title }}, here are your results:</h2>
+            <p class="card-text">Number of questions: {{total}}</p>
+            <p class="card-text">Correct answers: {{correct}}</p>
+            <p class="card-text">Wrong answers: {{wrong}}</p>
+        </div>
+    </div>
+    <div>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'category_page' %}">Start again</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <div>
+
+    <div class="container mt-5 pt-5">
+    {% for question in page_obj %}
+    <form action="" method="post">
+    {% csrf_token %}
+    
+    
+      <p>Question: {{question.question}}</p>
+      <div>
+      <input type="radio" name="option" value="{{question.op1}}" required>
+        {{question.op1}}
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="option" value="{{question.op2}}">
+        {{question.op2}}
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="option" value="{{question.op3}}">
+        {{question.op3}}
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="option" value="{{question.op4}}">
+        {{question.op4}}
+      </label>
+    </div>
+      <input type="hidden" name="answerLabel" id="answerLabel" value="{{question.answer}}">
+      <div>{% include 'messages.html' %}</div>
+      <br>
+      <input type="submit" value="Submit" i>
+    </form>
+    </div>
+
+    {% endfor %}
+
+    <br>
+
+    <div class="container">
+ 
+    <hr>        
+    Question {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+    {% comment %} <input type="text"> {% endcomment %}
+    </div>
+  </div>
+    
+ 
+</html>
